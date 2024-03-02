@@ -1,4 +1,4 @@
-from utils import load_json, filtered_and_sorted
+from utils import load_json, filtered_and_sorted, check_source
 
 PATH_TO_OPERATIONS = '../operations.json'
 
@@ -18,15 +18,10 @@ def main():
         currency = operation['operationAmount']['currency']['name']
         print(f"{date} {description}")
         if from_info:
-            print(f"{from_info} -> {to_info}")
+            print(f"{check_source.print_source_correct(from_info)} -> {check_source.print_source_correct(to_info)}")
         else:
-            print(f"{to_info}")
+            print(f"{check_source.print_source_correct(to_info)}")
         print(f"{amount} {currency}\n")
 
-
-# Пример вывода для одной операции:
-# 14.10.2018 Перевод организации
-# Visa Platinum 7000 79** **** 6361 -> Счет **9638
-# 82771.72 руб.
 
 main()
