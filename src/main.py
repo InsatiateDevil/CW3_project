@@ -1,11 +1,13 @@
-from utils import load_json, filtered_and_sorted, check_source
+from utils.load_json import load_json
+from utils.check_source import print_source_correct
+from utils.filtered_and_sorted import get_filtered_and_sorted_list
 
-PATH_TO_OPERATIONS = '/home/ilidanum/CW3_project/CW3/operations.json'
+PATH_TO_OPERATIONS = '../operations.json'
 
 
 def main():
-    list_operations = load_json.load_json(PATH_TO_OPERATIONS)
-    list_for_print = filtered_and_sorted.get_filtered_and_sorted_list(list_operations)
+    list_operations = load_json(PATH_TO_OPERATIONS)
+    list_for_print = get_filtered_and_sorted_list(list_operations)
     for operation in list_for_print[-5:]:
         date = operation['date'][:10].replace('-', '.')
         description = operation['description']
@@ -18,9 +20,9 @@ def main():
         currency = operation['operationAmount']['currency']['name']
         print(f"{date} {description}")
         if from_info:
-            print(f"{check_source.print_source_correct(from_info)} -> {check_source.print_source_correct(to_info)}")
+            print(f"{print_source_correct(from_info)} -> {print_source_correct(to_info)}")
         else:
-            print(f"{check_source.print_source_correct(to_info)}")
+            print(f"{print_source_correct(to_info)}")
         print(f"{amount} {currency}\n")
 
 
