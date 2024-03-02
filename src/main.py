@@ -1,6 +1,6 @@
 from utils import load_json, filtered_and_sorted, check_source
 
-PATH_TO_OPERATIONS = '../operations.json'
+PATH_TO_OPERATIONS = '/home/ilidanum/CW3_project/CW3/operations.json'
 
 
 def main():
@@ -24,4 +24,5 @@ def main():
         print(f"{amount} {currency}\n")
 
 
-main()
+if __name__ == "__main__":
+    main()
