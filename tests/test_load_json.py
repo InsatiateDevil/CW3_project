@@ -1,8 +1,8 @@
-from utils import load_json
+from utils.load_json import load_json
 
 
 def test_load_json():
-    assert load_json.load_json("/home/ilidanum/CW3_project/CW3/tests/operations_for_tests.json")[:1] == [
+    assert load_json("/home/ilidanum/CW3_project/CW3/tests/operations_for_tests.json")[:1] == [
         {
             "id": 667307132,
             "state": "EXECUTED",

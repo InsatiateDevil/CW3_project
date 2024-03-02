@@ -1,5 +1,5 @@
-from src import main
+from src.main import main
 
 
 def test_main(list_with_dict):
-    assert main.main() is None
+    assert main() is None

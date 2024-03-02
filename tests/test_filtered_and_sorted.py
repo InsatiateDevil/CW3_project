@@ -1,8 +1,8 @@
-from utils import filtered_and_sorted
+from utils.filtered_and_sorted import get_filtered_and_sorted_list
 
 
 def test_filtered_and_sorted(list_with_dict):
-    assert filtered_and_sorted.get_filtered_and_sorted_list(list_with_dict)[0] == {
+    assert get_filtered_and_sorted_list(list_with_dict)[0] == {
             "id": 490100847,
             "state": "EXECUTED",
             "date": "2018-12-22T02:02:49.564873",
