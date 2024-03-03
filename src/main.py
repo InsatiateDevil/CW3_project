@@ -1,15 +1,19 @@
+from datetime import datetime
+import os
+from config import ROOT_DIR
 from utils.load_json import load_json
 from utils.check_source import print_source_correct
 from utils.filtered_and_sorted import get_filtered_and_sorted_list
 
-PATH_TO_OPERATIONS = '../operations.json'
+PATH_TO_OPERATIONS = os.path.join(ROOT_DIR, "src", "operations.json")
 
 
 def main():
     list_operations = load_json(PATH_TO_OPERATIONS)
     list_for_print = get_filtered_and_sorted_list(list_operations)
     for operation in list_for_print[-5:]:
-        date = operation['date'][:10].replace('-', '.')
+        date = datetime.fromisoformat(operation['date'])
+        date = date.strftime('%d.%m.%Y')
         description = operation['description']
         if operation.get('from'):
             from_info = operation['from']
