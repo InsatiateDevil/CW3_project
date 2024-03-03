@@ -4,3 +4,4 @@ htmlcov
 .coverage
 poetry.lock
 pyproject.toml
+__pycache__/
