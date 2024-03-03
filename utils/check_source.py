@@ -1,4 +1,8 @@
 def print_source_correct(info_about_source):
+    """
+    :param info_about_source: содержит строку с описанием источника(карта или счет) и его номер
+    :return: готовое, отредактированное сообщение с замаскированными элементами номера
+    """
     count = 0
     for symbol in info_about_source:
         if symbol.isdigit():
